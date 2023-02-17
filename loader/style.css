@@ -1,0 +1,62 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.main{
+    width: 100vw;
+    background-color: #060836;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader{
+    position: relative;
+    animation: anim1 5s linear infinite;
+    transform-origin: left;
+}
+@keyframes anim1{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.loader span{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    transform-origin: left;
+    transform: rotate(calc(20deg * var(--x)));
+}
+.loader span::before{
+    content: " ";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #579df8;
+    box-shadow: 0 0 10px #579df8,
+                0 0 20px #579df8,
+                0 0 30px #579df8,
+                0 0 40px #579df8,
+                0 0 50px #579df8,
+                0 0 60px #579df8,
+                0 0 70px #579df8;
+    animation: minanim 4s linear infinite;            
+}
+@keyframes minanim{
+    0%{
+        transform: translateX(0px) scale(.3);
+    }
+    50%{
+        transform: translate(100px) scale(1);
+    }
+    100%{
+        transform: translate(0px) scale(.3);
+    }
+}
